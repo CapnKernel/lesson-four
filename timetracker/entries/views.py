@@ -57,9 +57,7 @@ def entries(request):
         if entry_form.is_valid():
             # If the form is valid, let's create and Entry with the submitted data
             p1 = entry_form.cleaned_data['project']
-            print("p1=", p1)
             project = get_object_or_404(Project, pk=entry_form.cleaned_data['project'])
-            print("project=", project)
             entry = Entry()
             entry.start = entry_form.cleaned_data['start']
             entry.stop = entry_form.cleaned_data['end']
