@@ -56,7 +56,6 @@ def entries(request):
         entry_form = EntryForm(request.POST)
         if entry_form.is_valid():
             # If the form is valid, let's create and Entry with the submitted data
-            p1 = entry_form.cleaned_data['project']
             project = get_object_or_404(Project, pk=entry_form.cleaned_data['project'])
             entry = Entry()
             entry.start = entry_form.cleaned_data['start']
