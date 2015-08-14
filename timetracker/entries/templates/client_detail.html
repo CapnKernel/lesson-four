@@ -6,7 +6,11 @@
   <h2>Client projects</h2>
 
   <h3>Client</h3>
-  {{ client.name }}
+  <form method="post">
+    {% csrf_token %}
+    {{ client_form.as_p }}
+    <input type="submit" name="submit" value="Save Client">
+  </form>
 
   <h3>Projects</h3>
   <ul>

@@ -73,6 +73,17 @@
         <li><a href="{% url 'entry-list' %}">Entries</a></li>
         <li><a href="{% url 'project-list' %}">Projects</a></li>
       </ul>
+
+      {% if messages %}
+        <h2>Messages</h2>
+
+        <ul class="messages">
+          {% for message in messages %}
+            <li><i>{{ message }}</i></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
       {% block content %}{% endblock %}
     </div>
   </body>
